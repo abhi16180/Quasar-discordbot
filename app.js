@@ -28,9 +28,9 @@ client.on('messageCreate', async message => {
 
 
 async function getAPOD() {
-    let resp = await axios.get(process.env.url)
+    let resp = await axios.get(process.env.url || process.env.nasa_api)
     return resp.data;
 
 }
 //to login 
-client.login(process.env.CLIENT_TOKEN); 
+client.login(process.env.CLIENT_TOKEN || process.env.discord_token); 
