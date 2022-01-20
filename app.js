@@ -15,9 +15,13 @@ client.on('ready', () => {
 client.on('messageCreate', async message => {
     let data = await getAPOD();
     let content = message.content;
+    let title = `**${data.title}**\n`;
+    let explanation = `*${data.explanation}*\n`;
+    let imageURL = `*url* : ${data.url} \n`;
+    let copyright = `**copyright** : ${data.copyright}\n`;
     switch (content) {
-        case "/quasar_help": message.reply('Hello there,this is quasar,type apod to get astronomy picture of the day!!'); break;
-        case "apod": message.reply(data.url); break;
+        case ".quasar": message.reply('Hello there,this is quasar!\nType apod to get astronomy picture of the day'); break;
+        case "apod": message.reply(title + explanation + copyright + imageURL); break;
         default: break;
     }
 
