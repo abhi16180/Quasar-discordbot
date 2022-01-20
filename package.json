@@ -17,6 +17,7 @@
     "axios": "^0.25.0",
     "discord.js": "^13.6.0",
     "dotenv": "^14.2.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "readme-md-generator": "^1.0.0"
   }
 }
