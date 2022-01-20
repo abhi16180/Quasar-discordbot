@@ -28,8 +28,8 @@ client.on('messageCreate', async message => {
 
 
 async function getAPOD() {
-    let resp = await axios.get('https://api.nasa.gov/planetary/apod?api_key=tbPsHv73APCeifSzJOgY9igFFVpfUVjToit22uEV')
+    let resp = await axios.get(process.env.url)
     return resp.data;
 }
 //to login 
-client.login('OTMzNjcxNDAzOTY4OTM4MDA0.Yek7QQ.brW86mc8klB25BS6KEq_0g7UsQY'); 
+client.login(process.env.CLIENT_TOKEN); 
