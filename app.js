@@ -20,8 +20,12 @@ client.on('messageCreate', async message => {
     let imageURL = `*url* : ${data.url} \n`;
     let copyright = `**copyright** : ${data.copyright}\n`;
     switch (content) {
-        case ".quasar": message.reply('Hello there,this is quasar!\nType apod to get astronomy picture of the day'); break;
-        case "apod": message.reply(title + explanation + copyright + imageURL); break;
+        case ".quasar": message.reply('Hello there,this is quasar!\n*Send*\n **.title**\nto get title\n**.url**\nto get image\n**.expln**\nto get explanation\n**.cpyrt**\nto get copyright details\n**.apod**\nto get all details\n'); break;
+        case ".url": message.reply(imageURL); break;
+        case ".title": message.reply(title); break;
+        case ".expln": message.reply(explanation); break;
+        case ".cpyrt": message.reply(copyright); break;
+        case ".apod": message.reply(title + explanation + copyright + imageURL); break;
         default: break;
     }
 
