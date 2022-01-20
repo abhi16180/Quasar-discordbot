@@ -32,7 +32,7 @@ client.on('messageCreate', async message => {
 
 
 async function getAPOD() {
-    let resp = await axios.get(process.env.url || process.env.nasa_api)
+    let resp = await axios.get('https://api.nasa.gov/planetary/apod?api_key=tbPsHv73APCeifSzJOgY9igFFVpfUVjToit22uEV')
     return resp.data;
 
 }
