@@ -16,7 +16,7 @@ client.on('messageCreate', async message => {
     let data = await getAPOD();
     let content = message.content;
     switch (content) {
-        case "/quasar_help": message.reply('Hello there,this is quasar,type apod to get image'); break;
+        case "/quasar_help": message.reply('Hello there,this is quasar,type apod to get astronomy picture of the day!!'); break;
         case "apod": message.reply(data.url); break;
         default: break;
     }
@@ -28,7 +28,7 @@ client.on('messageCreate', async message => {
 
 
 async function getAPOD() {
-    let resp = await axios.get('https://api.nasa.gov/planetary/apod?api_key=tbPsHv73APCeifSzJOgY9igFFVpfUVjToit22uEV')
+    let resp = await axios.get(process.env.url)
     return resp.data;
 }
 //to login 
