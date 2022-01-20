@@ -30,6 +30,7 @@ client.on('messageCreate', async message => {
 async function getAPOD() {
     let resp = await axios.get(process.env.url)
     return resp.data;
+
 }
 //to login 
 client.login(process.env.CLIENT_TOKEN); 
